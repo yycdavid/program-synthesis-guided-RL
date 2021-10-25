@@ -1,0 +1,15 @@
+name: craft_cvae
+recipes: "resources/craft/recipes.yaml"
+icons: "resources/craft/Icon"
+world:
+  name: CraftWorldHard
+  view_range: 2
+model:
+  name: ModularACModel
+  device: cuda
+results_dir: "results/"
+trainer:
+  name: Trainer
+  max_timesteps: 100
+  lr: 0.001
+  entropy_ratio: 0.001

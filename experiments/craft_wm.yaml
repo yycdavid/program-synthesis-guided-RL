@@ -1,0 +1,41 @@
+name: craft_wm
+recipes: "resources/craft/recipes.yaml"
+world:
+  name: CraftWorldHardHard
+  view_range: 2
+model:
+  name: WorldModels
+  device: cuda
+v_model:
+  name: ConvVAE
+  train_epochs: 40
+  train_rolls: 5000
+  rollout_data: "resources/craft/world_models_data.pickle"
+m_model:
+  name: MDNRNN
+  train_epochs: 60
+c_model:
+  train_alg: ac
+  input: scaled_h_only
+  generations: 1000
+  population: 64
+  n_rollouts: 8
+  h_scale: 5
+  z_scale: 30
+  critic_orig: True
+results_dir: "results/"
+trainer:
+  name: Trainer
+  use_curriculum: true
+  max_timesteps: 100
+  lr: 0.002
+  entropy_ratio: 0.001
+  n_iters: 400000
+  n_update: 50
+  n_batch: 10
+  tasks: all
+  per_task: 5000
+  improvement_threshold: 0.7
+  test_task: wood-1
+  n_replan: 20
+test_set: "resources/craft/test_set.pickle"

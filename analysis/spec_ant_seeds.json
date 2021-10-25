@@ -1,0 +1,6 @@
+{
+  "Ours": {"name": "ant_ours", "test_seeds": [1, 2, 3, 4, 5], "middle": "N_3", "iter": 40000},
+  "Oracle": {"name": "ant_ours", "test_seeds": [1, 2, 3, 4, 5], "middle": "oracle", "iter": 40000},
+  "End-to-end": {"name": "ant_nn", "test_seeds": [1,2,3,4,5], "middle": "N_3", "iter": 40000},
+  "WM": {"name": "ant_wm", "test_seeds": [1,2,3,4,5], "middle": "N_3", "iter": 40000}
+}

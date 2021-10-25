@@ -1,0 +1,29 @@
+name: ant_nn
+recipes: "resources/craft/recipes.yaml"
+world:
+  name: CraftWorldHard
+  with_ant: True
+  ant_model: logs/sac/Antg-v1_2/Antg-v1.zip
+  start_states: logs/sac/Antg-v1_1/end_states.pickle
+  ant_deterministic: True
+  ant_steps: 50
+model:
+  name: NNModel
+  device: cuda
+  load_saved: "results/craft_nn/model_400000.pt"
+results_dir: "results/"
+trainer:
+  name: Trainer
+  use_curriculum: False
+  max_timesteps: 100
+  lr: 0.002
+  entropy_ratio: 0.001
+  n_iters: 40000
+  n_update: 10
+  n_batch: 8
+  tasks: all
+  per_task: 1000
+  improvement_threshold: 0.7
+  test_task: gem-6
+  n_replan: 20
+test_set: "resources/craft/test_set_ant.pickle"

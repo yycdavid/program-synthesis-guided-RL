@@ -1,0 +1,29 @@
+name: box_relational
+world:
+  name: BoxWorld
+model:
+  name: RelationalModel
+  device: cuda
+  load_saved: None
+  modulate: true
+  n_layer: 2
+  n_heads: 2
+  original: true
+results_dir: "results/"
+trainer:
+  name: Trainer
+  use_curriculum: true
+  max_timesteps: 100
+  lr: 0.0002
+  entropy_ratio: 0.001
+  n_iters: 200000
+  n_update: 50
+  n_batch: 10
+  tasks: all
+  per_task: 500
+  improvement_threshold: 0.7
+  test_task: 2-2
+  n_replan: 10
+  dangle: true
+  starting_difficulty: 2
+test_set: "resources/box/test_set.pickle"

@@ -1,0 +1,13 @@
+name: box_cvae
+world:
+  name: BoxWorld
+model:
+  name: ModularACConvModel
+  device: cuda
+  load_saved: None
+results_dir: "results/"
+trainer:
+  name: Trainer
+  max_timesteps: 100
+  lr: 0.001
+  entropy_ratio: 0.001

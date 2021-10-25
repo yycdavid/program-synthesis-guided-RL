@@ -1,0 +1,7 @@
+{
+  "Ours": {"name": "box_ours", "seeds": [1, 2, 3, 4, 5], "middle": "reuse", "test_seeds": 1995},
+  "Oracle": {"name": "box_ours", "seeds": [1, 2, 3, 4, 5], "middle": "oracle", "test_seeds": 1995},
+  "End-to-end": {"name": "box_nn", "seeds": [1,2,3,4,5], "middle": "reuse_N_3", "test_seeds": 1995},
+  "WM": {"name": "box_wm", "seeds": [1,2,3,4,5], "middle": "reuse_N_3", "test_seeds": 1995},
+  "Relational": {"name": "box_relational", "seeds": [1,2,3,4,5], "middle": "reuse_N_3", "test_seeds": 1995}
+}

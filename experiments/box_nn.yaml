@@ -1,0 +1,26 @@
+name: box_nn
+world:
+  name: BoxWorld
+model:
+  name: NNConvModel
+  device: cuda
+  load_saved: None
+  modulate: true
+results_dir: "results/"
+trainer:
+  name: Trainer
+  use_curriculum: true
+  max_timesteps: 100
+  lr: 0.0005
+  entropy_ratio: 0.001
+  n_iters: 200000
+  n_update: 50
+  n_batch: 10
+  tasks: all
+  per_task: 500
+  improvement_threshold: 0.7
+  test_task: 4-4
+  n_replan: 10
+  dangle: true
+  starting_difficulty: 2
+test_set: "resources/box/test_set.pickle"

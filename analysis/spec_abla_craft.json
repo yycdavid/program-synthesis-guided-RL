@@ -1,0 +1,6 @@
+{
+  "Ours": {"name": "craft_ours", "seeds": [1, 2, 3, 4, 5], "middle": "N_3", "test_seeds": 1995},
+  "Oracle": {"name": "craft_ours", "seeds": [1, 2, 3, 4, 5], "middle": "oracle", "test_seeds": 1995},
+  "Optim": {"name": "craft_ours", "seeds": [1, 2, 3, 4, 5], "middle": "optim", "test_seeds": 1995},
+  "Random": {"name": "craft_ours", "seeds": [1, 2, 3, 4, 5], "middle": "randhall", "test_seeds": 1995}
+}

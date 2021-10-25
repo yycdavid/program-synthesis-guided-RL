@@ -1,0 +1,43 @@
+name: box_wm
+world:
+  name: BoxWorld
+model:
+  name: WorldModels
+  device: cuda
+  load_saved: None
+  modulate: true
+v_model:
+  name: ConvVAE
+  train_epochs: 40
+  train_rolls: 10000
+  rollout_data: "resources/box/world_models_data.pickle"
+m_model:
+  name: MDNRNN
+  train_epochs: 60
+c_model:
+  train_alg: ac
+  input: scaled_h_only
+  generations: 1000
+  population: 64
+  n_rollouts: 8
+  h_scale: 5
+  z_scale: 30
+  critic_orig: True
+results_dir: "results/"
+trainer:
+  name: Trainer
+  use_curriculum: true
+  max_timesteps: 100
+  lr: 0.0005
+  entropy_ratio: 0.001
+  n_iters: 200000
+  n_update: 50
+  n_batch: 10
+  tasks: all
+  per_task: 500
+  improvement_threshold: 0.7
+  test_task: 2-2
+  n_replan: 10
+  dangle: true
+  starting_difficulty: 2
+test_set: "resources/box/test_set.pickle"

@@ -1,0 +1,25 @@
+name: craft_nd_nn
+recipes: "resources/craft/recipes.yaml"
+world:
+  name: CraftWorldHard
+  view_range: 2
+  non_det: True
+model:
+  name: NNModel
+  device: cuda
+results_dir: "results/"
+trainer:
+  name: Trainer
+  use_curriculum: true
+  max_timesteps: 100
+  lr: 0.002
+  entropy_ratio: 0.001
+  n_iters: 400000
+  n_update: 50
+  n_batch: 10
+  tasks: all
+  per_task: 5000
+  improvement_threshold: 0.7
+  test_task: gem-ladder
+  n_replan: 20
+test_set: "resources/craft/test_set.pickle"
