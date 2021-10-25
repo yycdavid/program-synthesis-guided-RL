@@ -1,6 +1,6 @@
 # Program Synthesis Guided Reinforcement Learning for Partially Observed Environments
 
-This repository is the official implementation of *Program Synthesis Guided Reinforcement Learning for Partially Observed Environments*, NeurIPS 2021 spotlight. 
+This repository is the official implementation of *Program Synthesis Guided Reinforcement Learning for Partially Observed Environments*, NeurIPS 2021 spotlight.
 
 ## Dependencies
 
@@ -36,7 +36,7 @@ Command for training the policies:
 python main.py --mode train --config craft_ours.yaml
 ```
 
-The configurations files for our approach and the baselines for all the benchmarks are saved in [experiments](https://github.com/yycdavid/blueprint/tree/master/experiments). Change the `--config` flag to train different models for different benchmarks.
+The configurations files for our approach and the baselines for all the benchmarks are saved in [experiments](https://github.com/yycdavid/program-synthesis-guided-RL/tree/main/experiments). Change the `--config` flag to train different models for different benchmarks.
 
 As in the [world models paper](https://arxiv.org/abs/1803.10122), world models are trained stage-by-stage:
 ```
@@ -52,7 +52,7 @@ Get test results for the save models over the course of training:
 python main.py --mode test_stats --config craft_ours.yaml --cvae_path craft_cvae_abstract.pth
 ```
 
-The test set we use is saved in: [craft](https://github.com/yycdavid/blueprint/blob/master/resources/craft/test_set.pickle), [box](https://github.com/yycdavid/blueprint/blob/master/resources/box/test_set.pickle).
+The test set we use is saved in: [craft](https://github.com/yycdavid/program-synthesis-guided-RL/blob/main/resources/craft/test_set.pickle), [box](https://github.com/yycdavid/program-synthesis-guided-RL/blob/main/resources/box/test_set.pickle).
 
 Add `--oracle` flag to evaluate the oracle baseline. Add `--optim` to evaluate with optimistic synthesis; add `--use_random_hallucinator` to evaluate with random hallucinator (ablations).
 
